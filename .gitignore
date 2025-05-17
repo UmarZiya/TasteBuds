@@ -2,3 +2,4 @@
 # Ignore Parcel cache and build output
 .parcel-cache/
 dist/
+.parcel-cache/
