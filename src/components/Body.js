@@ -16,15 +16,24 @@ const Body = () => {
 
 
 
-    const fetchData=async()=>{
-      
-        const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5204303&lng=73.8567437&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
-        const json=await data.json();
-        console.log(json);
-        
-        setreslist(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);  
-        setFilteredRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    }
+const fetchData = async () => {
+  const response = await fetch("https://handler-cors.vercel.app/fetch", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      url: "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5204303&lng=73.8567437&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
+    }),
+  });
+
+  const json = await response.json();
+  console.log(json);
+
+  setreslist(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+  setFilteredRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+};
+
 
     useEffect(()=>{
       fetchData()
@@ -38,7 +47,7 @@ const Body = () => {
       )
     }
 
-    if(restaurantlist.length===0){
+    if(filteredRestaurant.length===0){
       return (
         <Shimmer />
       );
