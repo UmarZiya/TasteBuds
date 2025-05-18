@@ -77,7 +77,10 @@ tastebuds-app/
 The app will be served on http://localhost:1234/ (Parcel default port)
 
 
+
 Built With
+
+
 React – Frontend library
 
 Tailwind CSS – Utility-first CSS framework
