@@ -18,7 +18,7 @@ const Header = () => {
         <Link to="/contact" className="text-lg hover:text-pink-600 transition duration-200">
           Contact Us
         </Link>
-        <span className="text-lg">Cart</span>
+        <span className="text-lg cursor-pointer hover:underline hover:text-blue-800 transition duration-200" onClick={()=>(alert("Coming Soon"))}>Cart</span>
 
         <button
           onClick={() =>
