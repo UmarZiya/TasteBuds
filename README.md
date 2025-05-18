@@ -90,6 +90,8 @@ Parcel – Zero-config build tool
 GitHub – Version control
 
 Features
+
+
 💡 Shimmer UI while loading
 
 📦 Lazy loaded components
