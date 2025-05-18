@@ -1,5 +1,6 @@
-/node_modules
-# Ignore Parcel cache and build output
-.parcel-cache/
+node_modules/
 dist/
 .parcel-cache/
+.DS_Store
+.vscode/
+.env
