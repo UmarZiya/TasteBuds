@@ -36,7 +36,11 @@ const ItemList = (items) => {
                             />
                         </div>
                         <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2">
-                            <button className="bg-white border border-gray-300 px-3 py-1 text-sm text-green-600 font-medium rounded-md shadow hover:bg-gray-100 transition">
+                            <button className="bg-white border border-gray-300 px-3 py-1 text-sm text-green-600 font-medium rounded-md shadow hover:bg-gray-100 transition"
+                                onClick={() => {
+                                    alert("Coming soon");
+                                }}
+                            >
                                 Add+
                             </button>
                         </div>
