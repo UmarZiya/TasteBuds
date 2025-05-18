@@ -5,30 +5,55 @@ TasteBuds is a modern food ordering app built using React and Tailwind CSS, insp
 
 tastebuds-app/
 ├── .parcel-cache/
+
 ├── dist/
+
 ├── node_modules/
+
 ├── src/
+
 │   ├── components/
+
 │   │   ├── About.js
+
 │   │   ├── Body.js
+
 │   │   ├── Contact.js
+
 │   │   ├── Error.js
+
 │   │   ├── Header.js
+
 │   │   ├── ItemList.js
+
 │   │   ├── RestaurantCard.js
+
 │   │   ├── RestaurantCategory.js
+
 │   │   ├── RestaurantMenu.js
+
 │   │   └── Shimmer.js
+
 │   ├── utilities/
+
 │   │   ├── constants.js
+
 │   │   ├── mockData.js
+
 │   │   └── useOnlineStatus.js
+
 │   ├── index.css
+
 │   ├── index.js
+
 │   └── index.html
+
 ├── .gitignore
+
 ├── package.json
+
 ├── tailwind.config.js
+
 └── README.md
 
 
@@ -37,6 +62,7 @@ tastebuds-app/
  1.Clone the repository
 
     git clone https://github.com/UmarZiya/TasteBuds.git
+
 
     cd TasteBuds
           
