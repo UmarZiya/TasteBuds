@@ -10,17 +10,21 @@ const RestaurantMenu = () => {
   useEffect(() => {
     fetchMenu();
   }, []);
+const fetchMenu = async () => {
+  const response = await fetch("https://handler-cors.vercel.app/fetch", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      url: `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5204303&lng=73.8567437&restaurantId=${resId}&submitAction=ENTER`
+    }),
+  });
 
-  const fetchMenu = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5204303&lng=73.8567437&restaurantId=" +
-        resId +
-        "&submitAction=ENTER"
-    );
-    const json = await data.json();
+  const data = await response.json();
+  setResInfo(data);
+};
 
-    setResInfo(json);
-  };
 
   if (resInfo === null) {
     return <Shimmer />;
