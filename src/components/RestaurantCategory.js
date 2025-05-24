@@ -26,7 +26,8 @@ const RestaurantCategory = ({ data }) => {
             {/* ItemList */}
             {showItems && (
                 <div className="px-4 pb-4">
-                    <ItemList items={data.itemCards} />
+                    <ItemList items={data?.itemCards }  />
+
                 </div>
             )}
         </div>

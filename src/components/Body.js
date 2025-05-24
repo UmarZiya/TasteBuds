@@ -1,8 +1,10 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState,useEffect } from "react";
+import { useState,useEffect,useContext } from "react";
 import Shimmer from "./Shimmer"
 import { Link } from "react-router-dom";
-import useOnlineStatus from "../utilities/useOnlineStatus";
+
+
+
   
 
 // import reslist from "../utils/mockData";
@@ -13,6 +15,7 @@ const Body = () => {
   const [restaurantlist,setreslist] = useState([]);
   const [filteredRestaurant,setFilteredRestaurant]=useState([])
   const [searchText,setsearchText]=useState("")
+  
 
 
 
@@ -28,7 +31,7 @@ const fetchData = async () => {
   });
 
   const json = await response.json();
-  console.log(json);
+
 
   setreslist(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   setFilteredRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -40,12 +43,7 @@ const fetchData = async () => {
     },[])
     
     
-    const onlineStatus=useOnlineStatus();
-    if(onlineStatus===false){
-      return(
-        <h1>HEY!!!!Looks like you are offline.Check Your Network Connection</h1>
-      )
-    }
+
 
     if(filteredRestaurant.length===0){
       return (
@@ -54,9 +52,11 @@ const fetchData = async () => {
     }
 
 
-
+    
   return (
-<div className="body">
+  <div className="body">
+
+
   <div className="flex items-center justify-between p-4 bg-white shadow-md rounded-lg mb-6">
     
     <div className="flex-1"></div>

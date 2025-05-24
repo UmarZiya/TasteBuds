@@ -6,6 +6,7 @@ import RestaurantCategory from "./RestaurantCategory";
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState(null);
   const { resId } = useParams();
+ 
 
   useEffect(() => {
     fetchMenu();
@@ -44,10 +45,10 @@ const fetchMenu = async () => {
   const menu = menuCards?.find((c) => c.card?.card?.itemCards);
 
   const itemCards = menu?.card?.card?.itemCards;
-  console.log(itemCards);
+  
 
   const categories= menuCards.filter((c)=> c?.card?.card?.["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
-  console.log(categories);
+  
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
@@ -66,7 +67,7 @@ const fetchMenu = async () => {
       {categories.map((category)=>(
         <div key={category?.card?.card?.title} className="mb-6">
         
-        <RestaurantCategory data={category?.card?.card} />
+        <RestaurantCategory data={category?.card?.card}  />
         
         </div>
       ))}

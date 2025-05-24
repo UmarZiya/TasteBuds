@@ -1,3 +1,4 @@
+
 const RestaurantCard = ({ reslist }) => {
   const {
     name,
@@ -6,6 +7,7 @@ const RestaurantCard = ({ reslist }) => {
     avgRating,
     locality,
   } = reslist.info;
+
 
   return (
     <div className="w-64 p-4 m-2 bg-white shadow-md rounded-lg hover:scale-105 transform transition duration-300">
@@ -18,6 +20,9 @@ const RestaurantCard = ({ reslist }) => {
       <p className="text-sm text-gray-600">🍽 {cuisines.join(", ")}</p>
       <p className="text-sm text-green-600">⭐ {avgRating}</p>
       <p className="text-sm text-gray-500">📍 {locality}</p>
+      
+
+
     </div>
   );
 };

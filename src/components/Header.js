@@ -1,12 +1,19 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+
+import { useContext } from "react";
+import CartContext from "../utilities/CartContext";
+
+
 const Header = () => {
   const [statebutton, setstatebutton] = useState("Login");
+  const {cartItems}=useContext(CartContext)
+  
 
   return (
     <header className="flex justify-between items-center bg-pink-100 px-8 py-4 shadow-md">
-      <h2 className="text-2xl font-bold text-pink-800">🍔 TasteBuds</h2>
+      <Link to="/"><h2  className="text-2xl font-bold text-pink-800">🍔 TasteBuds</h2></Link>
 
       <nav className="flex items-center space-x-6">
         <Link to="/" className="text-lg hover:text-pink-600 transition duration-200">
@@ -18,7 +25,8 @@ const Header = () => {
         <Link to="/contact" className="text-lg hover:text-pink-600 transition duration-200">
           Contact Us
         </Link>
-        <span className="text-lg cursor-pointer hover:underline hover:text-blue-800 transition duration-200" onClick={()=>(alert("Coming Soon"))}>Cart</span>
+
+        <Link to="/cart"><span className="text-lg cursor-pointer hover:underline hover:text-blue-800 transition duration-200" >Cart {cartItems.length} </span> </Link>
 
         <button
           onClick={() =>
@@ -28,6 +36,7 @@ const Header = () => {
         >
           {statebutton}
         </button>
+
       </nav>
     </header>
   );
